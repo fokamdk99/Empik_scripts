@@ -1,4 +1,3 @@
-
 local_directory=
 remote_directory=
 remote_user=
@@ -34,6 +33,5 @@ if [ -z "$local_directory" ] || [ -z "$remote_directory" ] || [ -z "$remote_host
 	echo "podaj wszystkie dane"
 	exit
 fi
-
-
+echo "tar czf - \"$local_directory\" | ssh \"$remote_user\"@\"$remote_host\" \"cd \"$remote_directory\" && tar xvzf -\"
 tar czf - "$local_directory" | ssh "$remote_user"@"$remote_host" "cd $remote_directory && tar xvzf -"
